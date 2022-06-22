@@ -13,7 +13,7 @@ const {
 
 const app = express();
 const {
-  PORT = 3001,
+  PORT = 3000,
 } = process.env;
 
 mongoose.connect('mongodb://localhost:27017/mestodb');
