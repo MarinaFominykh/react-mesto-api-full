@@ -1,0 +1,26 @@
+.profile {
+    padding: 0;
+    margin: 0 auto 47.25px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "image name add" "image self add";
+    align-content: space-between;
+    row-gap: 16px;
+    background-size: cover;
+    background-position: center;
+   
+}
+
+
+@media screen and (max-width: 960px) {
+    .profile {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, min-content);
+        grid-template-areas: "image" "name" "self" "add";
+        justify-content: center;
+        margin: 0 auto;
+        row-gap: 0;
+    }
+}

@@ -1,0 +1,10 @@
+.places__delete-cup {
+    width: 18px;
+    height: 4.42px;
+    background-image: url(../../../images/cap_delete.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 1.28px;
+    
+}
+

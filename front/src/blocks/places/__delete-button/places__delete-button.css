@@ -1,0 +1,16 @@
+.places__delete-button {
+    border: none;
+    background-color: transparent;
+    color: #FFFFFF;
+    padding: 0;
+    transition: .5s;
+    align-self: center;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.places__delete-button:hover {
+    opacity: 0.6;
+}

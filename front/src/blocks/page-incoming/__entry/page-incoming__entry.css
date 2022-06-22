@@ -1,0 +1,27 @@
+.page-incoming__entry {
+    transition: .5s;
+    cursor: pointer;
+    background-color: transparent;
+    color: #FFFFFF;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.register__entry:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 960px) {
+    .page-incoming__entry {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

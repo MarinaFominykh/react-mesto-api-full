@@ -1,0 +1,19 @@
+.page {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1280px;
+    background: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
+    margin: auto;
+    padding-top: 45px;
+    padding-bottom: 60px;
+}
+
+@media screen and (max-width: 960px) {
+    .page {
+        padding-top: 28px;
+        padding-bottom: 36px;
+    }
+}

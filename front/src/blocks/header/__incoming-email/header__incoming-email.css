@@ -1,0 +1,15 @@
+.header__incoming-email {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 960px) {
+    .header__incoming-email {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

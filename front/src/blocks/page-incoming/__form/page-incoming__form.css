@@ -1,0 +1,11 @@
+.page-incoming__form {
+    width: 358px;
+    margin: auto;
+    border: 0;
+}
+
+@media screen and (max-width: 960px) {
+    .page-incoming__form {
+        max-width: 260px;
+    }
+}

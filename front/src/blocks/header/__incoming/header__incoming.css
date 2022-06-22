@@ -1,0 +1,10 @@
+.header__incoming {
+    display: flex;
+    gap: 24px;
+}
+
+@media screen and (max-width: 960px) {
+    .header__incoming {
+        margin-right: 30px;
+    }
+}

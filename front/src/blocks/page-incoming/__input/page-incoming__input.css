@@ -1,0 +1,13 @@
+.page-incoming__input {
+    width: 100%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #CCCCCC;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #CCCCCC;
+    padding: 0 0 13px 0;
+}

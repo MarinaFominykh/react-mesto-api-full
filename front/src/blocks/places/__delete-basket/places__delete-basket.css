@@ -1,0 +1,11 @@
+.places__delete-basket {
+    
+    width: 15.44px;
+    height: 13.3px;
+    background-image: url(../../../images/basket_delete.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+    
+}
+

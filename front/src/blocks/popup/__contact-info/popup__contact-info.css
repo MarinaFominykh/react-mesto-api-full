@@ -1,0 +1,13 @@
+.popup__contact-info {
+    border: none;
+    padding: 0;
+    margin: 0 0 18px 0;
+    max-width: 358px;
+    width: 100%;
+}
+
+@media screen and (max-width: 960px) {
+    .popup__contact-info {
+        max-width: 238px;
+    }
+}

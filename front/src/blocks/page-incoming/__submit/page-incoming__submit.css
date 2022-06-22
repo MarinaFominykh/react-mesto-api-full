@@ -1,0 +1,25 @@
+.page-incoming__submit {
+    width: 100%;
+    height: 50px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+    background: #FFFFFF;
+    border-radius: 2px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.page-incoming__submit:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 960px) {
+    .page-incoming__submit {
+        width: 260px;
+    }
+}

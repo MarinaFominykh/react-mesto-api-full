@@ -1,0 +1,22 @@
+.header__incoming-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #A9A9A9;
+    transition: .5s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header__incoming-text:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 960px) {
+    .header__incoming-text {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
