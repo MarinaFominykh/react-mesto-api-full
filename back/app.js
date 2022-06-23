@@ -1,20 +1,13 @@
 const express = require('express');
+require('dotenv').config();
 const mongoose = require('mongoose');
 const process = require('process');
 const bodyParser = require('body-parser');
-require('dotenv').config();
-const {
-  errors,
-} = require('celebrate');
-const {
-  celebrate,
-  Joi,
-} = require('celebrate');
+const { errors } = require('celebrate');
+const { celebrate, Joi } = require('celebrate');
 
 const app = express();
-const {
-  PORT = 3000,
-} = process.env;
+const { PORT = 3001 } = process.env;
 
 mongoose.connect('mongodb://localhost:27017/mestodb');
 
@@ -23,6 +16,7 @@ app.use(bodyParser.urlencoded({
   extended: true,
 }));
 const cors = require('cors');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 const userRouter = require('./routes/users');
 const cardRouter = require('./routes/cards');
 const {
@@ -33,6 +27,7 @@ const {
 const auth = require('./middlewares/auth');
 const NotFoundError = require('./errors/not-found-err');
 
+app.use(requestLogger);
 app.use(cors());
 app.post(
   '/signin',
@@ -70,6 +65,7 @@ app.use('*', () => {
   throw new NotFoundError('Запрашиваемая страница не найдена');
 });
 
+app.use(errorLogger);
 app.use(errors());
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {

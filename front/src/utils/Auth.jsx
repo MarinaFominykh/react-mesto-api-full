@@ -1,4 +1,6 @@
-export const BASE_URL = 'http://pro-mesto.nomoredomains.xyz';
+// export const BASE_URL = 'http://pro-mesto.nomoredomains.xyz';
+export const BASE_URL = 'http://localhost:3001';
+
 
 export const register = (password, email) => {
   return fetch(`${BASE_URL}/signup`, {

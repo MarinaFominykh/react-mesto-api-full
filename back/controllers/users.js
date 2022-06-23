@@ -4,7 +4,8 @@ const User = require('../models/user');
 const NotFoundError = require('../errors/not-found-err');
 const InValidDataError = require('../errors/in-valid-data-err');
 
-const JWT_SECRET_KEY = 'some-secret-key';
+// const JWT_SECRET_KEY = 'some-secret-key';
+const { JWT_SECRET_KEY } = process.env;
 
 const createUser = (req, res, next) => {
   const {
@@ -70,7 +71,7 @@ const updateUser = (req, res, next) => {
     throw new InValidDataError('Переданы некорректные данные');
   }
   User.findByIdAndUpdate(req.user._id, { name, about }, { new: true })
-    .then(() => res.status(200).send({ name, about }))
+    .then((newUser) => res.status(200).send(newUser))
     .catch(next);
 };
 
@@ -80,7 +81,7 @@ const updateAvatar = (req, res, next) => {
     throw new InValidDataError('Переданы некорректные данныe');
   }
   User.findByIdAndUpdate(req.user._id, { avatar }, { new: true })
-    .then((newAvatar) => res.send({ data: newAvatar }))
+    .then((newAvatar) => res.send(newAvatar))
     .catch(next);
 };
 

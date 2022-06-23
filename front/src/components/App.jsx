@@ -47,7 +47,7 @@ function App() {
         
       })
       .catch(console.log);
-  }, []);
+  }, [loggedIn]);
 
   useEffect(() => {
     api
@@ -57,7 +57,7 @@ function App() {
         console.log(res)
       })
       .catch(console.log);
-  }, []);
+  }, [loggedIn]);
 
 
   useEffect(() => {
