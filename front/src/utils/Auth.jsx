@@ -1,5 +1,5 @@
 export const BASE_URL = 'http://pro-mesto.nomoredomains.xyz/api';
-// export const BASE_URL = 'http://localhost:3001';
+// export const BASE_URL = 'http://localhost:3001/api';
 
 
 export const register = (password, email) => {

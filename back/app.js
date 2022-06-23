@@ -30,7 +30,7 @@ const NotFoundError = require('./errors/not-found-err');
 app.use(requestLogger);
 app.use(cors());
 app.post(
-  'api/signin',
+  '/api/signin',
   celebrate({
     body: Joi.object().keys({
       email: Joi.string().required().email(),
@@ -41,7 +41,7 @@ app.post(
 );
 
 app.post(
-  'api/signup',
+  '/api/signup',
   celebrate({
     body: Joi.object().keys({
       name: Joi.string().min(2).max(30),
@@ -57,9 +57,9 @@ app.post(
 );
 
 app.use(auth);
-app.get('api/users/me', getCurrentUser);
-app.use('api/users', userRouter);
-app.use('api/cards', cardRouter);
+app.get('/api/users/me', getCurrentUser);
+app.use('/api/users', userRouter);
+app.use('/api/cards', cardRouter);
 
 app.use('*', () => {
   throw new NotFoundError('Запрашиваемая страница не найдена');
