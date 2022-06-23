@@ -85,6 +85,6 @@ class Api {
 }
 
 export const api = new Api({
-  // baseUrl: 'http://pro-mesto.nomoredomains.xyz',
-  baseUrl: 'http://localhost:3001',
+  baseUrl: 'http://pro-mesto.nomoredomains.xyz',
+  // baseUrl: 'http://localhost:3001',
  });
