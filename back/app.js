@@ -5,6 +5,7 @@ const process = require('process');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
 const { celebrate, Joi } = require('celebrate');
+const validator = require('validator');
 
 const app = express();
 const { PORT = 3000 } = process.env;
@@ -29,7 +30,7 @@ const NotFoundError = require('./errors/not-found-err');
 
 app.use(requestLogger);
 
-app.get('api/crach-test', () => {
+app.get('api/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадет');
   }, 0);
@@ -54,9 +55,12 @@ app.post(
     body: Joi.object().keys({
       name: Joi.string().min(2).max(30),
       about: Joi.string().min(2).max(30),
-      avatar: Joi.string().pattern(
-        /^(http|https):\/\/(\w+:{0,1}\w*#)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&amp;%#!\-/]))?/,
-      ),
+      avatar: Joi.string().custom((value) => {
+        if (!validator.isURL(value, { require_protocol: true })) {
+          throw new Error('Неправильный формат ссылки');
+        }
+        return value;
+      }),
       email: Joi.string().required().email(),
       password: Joi.string().required(),
     }),

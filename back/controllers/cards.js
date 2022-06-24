@@ -12,9 +12,6 @@ const getCards = (req, res, next) => {
 const createCard = (req, res, next) => {
   const { name, link } = req.body;
   const owner = req.user;
-  if (!name || !link) {
-    throw InValidDataError('Переданы некорректные данные карточки');
-  }
   Card.create({ name, link, owner })
     .then((card) => res.status(200).send(card))
     // eslint-disable-next-line consistent-return

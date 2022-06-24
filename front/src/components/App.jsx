@@ -83,7 +83,11 @@ function App() {
       }
       localStorage.setItem("token", data.token);
       setLoggedIn(true);
-    });
+    })
+    .catch(() => {
+      setSuccess(false);
+      handleinfoTooltipClick();
+    })
   };
 
   const handleRegister = (password, email) => {

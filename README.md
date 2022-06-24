@@ -4,3 +4,12 @@
 # ссылка на сайт:
 
 https://pro-mesto.nomoredomains.xyz
+
+# домен сервера:
+
+https://pro-mesto.nomoredomains.xyz/api
+
+# публичный IP-адрес:
+
+51.250.94.116
+

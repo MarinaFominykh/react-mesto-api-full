@@ -9,9 +9,9 @@ const createUser = (req, res, next) => {
   const {
     name, about, avatar, email, password,
   } = req.body;
-  if (!email || !password) {
-    throw new InValidDataError('Переданы некорректные данные');
-  }
+  // if (!email || !password) {
+  //   throw new InValidDataError('Переданы некорректные данные');
+  // }
   bcrypt.hash(password, 10)
     .then((hash) => {
       User.create({
@@ -33,7 +33,8 @@ const createUser = (req, res, next) => {
           }
           return next(err);
         });
-    });
+    })
+    .catch(next);
 };
 
 const login = (req, res, next) => {
@@ -70,6 +71,11 @@ const updateUser = (req, res, next) => {
   }
   User.findByIdAndUpdate(req.user._id, { name, about }, { new: true })
     .then((newUser) => res.status(200).send(newUser))
+    .catch((error) => {
+      if (error.name === 'ValidationError') {
+        next(new InValidDataError('Переданы некорректные данные при создании карточки'));
+      } else { next(error); }
+    })
     .catch(next);
 };
 
@@ -80,6 +86,11 @@ const updateAvatar = (req, res, next) => {
   }
   User.findByIdAndUpdate(req.user._id, { avatar }, { new: true })
     .then((newAvatar) => res.send(newAvatar))
+    .catch((error) => {
+      if (error.name === 'ValidationError') {
+        next(new InValidDataError('Переданы некорректные данные при создании аватара'));
+      } else { next(error); }
+    })
     .catch(next);
 };
 

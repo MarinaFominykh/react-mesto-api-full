@@ -86,5 +86,4 @@ class Api {
 
 export const api = new Api({
   baseUrl: 'https://pro-mesto.nomoredomains.xyz/api',
-
- });
+   });
