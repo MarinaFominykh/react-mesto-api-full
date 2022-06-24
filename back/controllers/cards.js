@@ -16,7 +16,7 @@ const createCard = (req, res, next) => {
     throw InValidDataError('Переданы некорректные данные карточки');
   }
   Card.create({ name, link, owner })
-    .then((card) => res.status(200).send({ data: card }))
+    .then((card) => res.status(200).send(card))
     // eslint-disable-next-line consistent-return
     .catch((error) => {
       if (error.name === 'ValidationError') {

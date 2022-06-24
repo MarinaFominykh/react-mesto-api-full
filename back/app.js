@@ -7,7 +7,7 @@ const { errors } = require('celebrate');
 const { celebrate, Joi } = require('celebrate');
 
 const app = express();
-const { PORT = 3000 } = process.env;
+const { PORT = 3001 } = process.env;
 
 mongoose.connect('mongodb://localhost:27017/mestodb');
 
