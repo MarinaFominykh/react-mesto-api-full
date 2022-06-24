@@ -1,11 +1,9 @@
+const { NODE_ENV, JWT_SECRET_KEY } = process.env;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const NotFoundError = require('../errors/not-found-err');
 const InValidDataError = require('../errors/in-valid-data-err');
-
-// const JWT_SECRET_KEY = 'some-secret-key';
-const { JWT_SECRET_KEY } = process.env;
 
 const createUser = (req, res, next) => {
   const {
@@ -42,7 +40,7 @@ const login = (req, res, next) => {
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, JWT_SECRET_KEY, { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET_KEY : 'dev-secret', { expiresIn: '7d' });
       res.status(200).send({ token });
     })
     .catch(next);

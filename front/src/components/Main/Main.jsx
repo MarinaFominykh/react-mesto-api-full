@@ -53,15 +53,15 @@ function Main({
           return  (
             <Card
               {...item}
-              card={item}
               key={item._id}
+              card={item}
               onCardClick={onCardClick}
               onCardLike={onCardLike}
               onCardDelete={onCardDelete}
             />
           )
         }
-       )}
+       ).reverse()}
         </ul>
       </section>
     </main>

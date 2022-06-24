@@ -63,7 +63,7 @@ const likecard = (req, res, next) => {
       if (!card) {
         throw new NotFoundError('Запрашиваемая карточка не найдена');
       }
-      res.send({ card });
+      res.send(card);
     })
     // eslint-disable-next-line consistent-return
     .catch((error) => {
@@ -85,7 +85,7 @@ const disLikecard = (req, res, next) => {
       if (!card) {
         throw new NotFoundError('Запрашиваемая карточка не найдена');
       }
-      res.send({ data: card });
+      res.send(card);
     })
     // eslint-disable-next-line consistent-return
     .catch((error) => {

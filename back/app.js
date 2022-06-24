@@ -28,7 +28,15 @@ const auth = require('./middlewares/auth');
 const NotFoundError = require('./errors/not-found-err');
 
 app.use(requestLogger);
+
+app.get('api/crach-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадет');
+  }, 0);
+});
+
 app.use(cors());
+
 app.post(
   '/api/signin',
   celebrate({
